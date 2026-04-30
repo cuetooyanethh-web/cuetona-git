@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.ufinet.com/que-es-ciberseguridad/" width="100%" />
+  <img src="https://www.sonda.com/images/default-source/innova/innova-header-4-.jpg?sfvrsn=5ef28e27_1" width="100%" />
 </p>
 <h1 align="center">Hola, soy cibercuetona 👋</h1>
 
