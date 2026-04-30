@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://www.ufinet.com/que-es-ciberseguridad/" width="100%" />
+</p>
 <h1 align="center">Hola, soy cibercuetona 👋</h1>
 
 <h3 align="center">🔐 Ingeniera en Ciberseguridad</h3>
