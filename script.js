@@ -128,3 +128,68 @@ input.addEventListener("keydown", function(e) {
         input.value = "";
     }
 });
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        const command = input.value.toLowerCase();
+        let response = "";
+
+        if (command === "help") {
+            response = `
+Comandos disponibles:
+- help
+- about
+- skills
+- ping 8.8.8.8
+- whoami
+- clear
+`;
+        } 
+        else if (command === "about") {
+            response = "Especialista en ciberseguridad 🔐";
+        } 
+        else if (command === "skills") {
+            response = "Nmap | Metasploit | Burp Suite | Wireshark";
+        } 
+        else if (command === "whoami") {
+            response = "cybercuetona@root";
+        } 
+        else if (command.startsWith("ping")) {
+            response = `
+Haciendo ping a 8.8.8.8...
+Respuesta desde 8.8.8.8: bytes=32 tiempo=20ms TTL=56
+Respuesta desde 8.8.8.8: bytes=32 tiempo=18ms TTL=56
+Ping exitoso ✔
+`;
+        } 
+        else if (command === "clear") {
+            output.innerHTML = "";
+            input.value = "";
+            return;
+        } 
+        else {
+            response = "❌ Comando no reconocido...";
+        }
+
+        output.innerHTML += `<p>> ${command}</p><p>${response}</p>`;
+        input.value = "";
+    }
+});
+document.querySelectorAll(".project-links a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        if (this.getAttribute("href") === "#") {
+            e.preventDefault();
+
+            alert("⛔ ACCESO DENEGADO ⛔");
+        }
+    });
+});
+const titles = ["CyberCuetona", "Access Granted", "System Secured 🔐"];
+let index = 0;
+
+setInterval(() => {
+    document.title = titles[index];
+    index = (index + 1) % titles.length;
+}, 2000);
