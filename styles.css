@@ -378,6 +378,11 @@ footer {
     color: #0f0;
     outline: none;
 }
+
+
+
+
+/*aqui esta bien no borres*/
 .scan {
     position: relative;
     overflow: hidden;
@@ -397,3 +402,4 @@ footer {
 .scan:hover::after {
     left: 100%;
 }
+/*scan*/
