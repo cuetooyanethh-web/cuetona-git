@@ -359,6 +359,10 @@ footer {
     border-radius: 10px;
     font-family: monospace;
     box-shadow: 0 0 20px rgba(255,0,0,0.4);
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s;
 }
 
 #terminal-output {
@@ -405,11 +409,7 @@ footer {
     color: #0f0;
     opacity: 0.5;
 }
-.terminal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.6s;
-}
+
 
 .terminal.show {
     opacity: 1;
@@ -438,10 +438,6 @@ header, main, footer {
     caret-color: #0f0;
 }
 
-#terminal-input::after {
-    content: "|";
-    animation: blink 1s infinite;
-}
 
 @keyframes blink {
     0%, 50%, 100% { opacity: 1; }
