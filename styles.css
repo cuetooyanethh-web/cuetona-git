@@ -428,5 +428,22 @@ body::after {
         transparent 3px
     );
     pointer-events: none;
-    z-index: 1;
+    z-index: 0; /* 👈 importante */
+}
+header, main, footer {
+    position: relative;
+    z-index: 2;
+}
+#terminal-input {
+    caret-color: #0f0;
+}
+
+#terminal-input::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
 }
