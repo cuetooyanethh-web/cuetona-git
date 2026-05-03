@@ -221,7 +221,7 @@ section {
     content: '';
     width: 15px;
     height: 15px;
-    background: var(--primary-color);
+    background: var(--primary-color); 
     position: absolute;
     left: 0;
     top: 5px;
