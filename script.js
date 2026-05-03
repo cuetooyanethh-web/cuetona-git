@@ -102,3 +102,29 @@ setInterval(() => {
         -${Math.random()*5}px 0 blue
     `;
 }, 100);
+const input = document.getElementById("terminal-input");
+const output = document.getElementById("terminal-output");
+
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        const command = input.value.toLowerCase();
+        let response = "";
+
+        if (command === "help") {
+            response = "Comandos: help, about, skills, clear";
+        } else if (command === "about") {
+            response = "Soy especialista en ciberseguridad 🔐";
+        } else if (command === "skills") {
+            response = "Nmap, Metasploit, Burp Suite, Wireshark";
+        } else if (command === "clear") {
+            output.innerHTML = "";
+            input.value = "";
+            return;
+        } else {
+            response = "Comando no reconocido...";
+        }
+
+        output.innerHTML += `<p>> ${command}</p><p>${response}</p>`;
+        input.value = "";
+    }
+});

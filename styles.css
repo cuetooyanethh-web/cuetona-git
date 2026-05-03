@@ -356,3 +356,25 @@ footer {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 0 20px rgba(255,0,0,0.5);
 }
+.terminal {
+    background: #000;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 10px;
+    font-family: monospace;
+    box-shadow: 0 0 20px rgba(255,0,0,0.4);
+}
+
+#terminal-output {
+    min-height: 150px;
+    margin-bottom: 10px;
+    color: #0f0;
+}
+
+#terminal-input {
+    width: 100%;
+    background: black;
+    border: none;
+    color: #0f0;
+    outline: none;
+}
