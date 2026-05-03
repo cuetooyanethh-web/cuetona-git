@@ -94,3 +94,11 @@ function draw() {
 }
 
 setInterval(draw, 33);
+const title = document.querySelector(".hero-text h1");
+
+setInterval(() => {
+    title.style.textShadow = `
+        ${Math.random()*5}px 0 red,
+        -${Math.random()*5}px 0 blue
+    `;
+}, 100);
