@@ -128,3 +128,10 @@ input.addEventListener("keydown", function(e) {
         input.value = "";
     }
 });
+const terminal = document.querySelector(".terminal");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+        terminal.classList.add("show");
+    }
+});
