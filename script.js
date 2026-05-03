@@ -177,19 +177,3 @@ Ping exitoso ✔
         input.value = "";
     }
 });
-document.querySelectorAll(".project-links a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        if (this.getAttribute("href") === "#") {
-            e.preventDefault();
-
-            alert("⛔ ACCESO DENEGADO ⛔");
-        }
-    });
-});
-const titles = ["CyberCuetona", "Access Granted", "System Secured 🔐"];
-let index = 0;
-
-setInterval(() => {
-    document.title = titles[index];
-    index = (index + 1) % titles.length;
-}, 2000);
