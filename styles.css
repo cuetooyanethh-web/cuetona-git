@@ -154,6 +154,7 @@ section {
     color: var(--gray-text);
     margin-bottom: 1.5rem;
 }
+/* BORDE DE FOTO */
 .hero-image img {
     width: 350px;
     height: 350px;
@@ -199,11 +200,8 @@ section {
     background: #ff2e2e;
     box-shadow: 0 0 10px #ff2e2e;
 }
-/* BORDE DE FOTO */
-.hero-image img {
-    border: 3px solid #ff2e2e;
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-}
+
+
 
 /* EXPERIENCIA */
 .timeline {
@@ -269,7 +267,8 @@ section {
 }
 
 .projects-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255,0,0,0.5);
 }
 
 .projects-img img {
@@ -352,10 +351,7 @@ footer {
     transform: translate(-50%, -50%);
     z-index: 999;
 }
-.projects-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
-}
+
 .terminal {
     background: #000;
     padding: 1rem;
@@ -404,14 +400,7 @@ footer {
 }
 /*scan*/
 
-#matrix {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+
 .terminal input::placeholder {
     color: #0f0;
     opacity: 0.5;
@@ -425,4 +414,19 @@ footer {
 .terminal.show {
     opacity: 1;
     transform: translateY(0);
+}
+body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,0,0,0.03),
+        rgba(255,0,0,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 1;
 }
