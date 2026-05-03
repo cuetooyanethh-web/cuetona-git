@@ -175,6 +175,11 @@ Ping exitoso ✔
                 input.value = "";
                 return;
             } 
+            else if (command === "hack") {
+    simularHackeo();
+    input.value = "";
+    return;
+}
             else {
                 response = "❌ Comando no reconocido";
             }
