@@ -13,6 +13,7 @@ body {
     align-items: center;
     padding: 40px 0;
     font-family: "Times New Roman", serif;
+     counter-reset: pagina;
 }
 
 /* 🔴 HOJA A4 */
