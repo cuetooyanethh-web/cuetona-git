@@ -27,6 +27,10 @@ body {
 
 /* 🔴 PORTADA */
 .portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 👈 centra vertical */
+    align-items: center;
     text-align: center;
 }
 
