@@ -27,7 +27,7 @@ window.addEventListener("scroll", () => {
     }
 
     // TERMINAL SHOW
-    if (terminal && window.scrollY > 500) {
+    if (terminal && window.scrollY > 300) {
         terminal.classList.add("show");
     }
 });
@@ -67,21 +67,21 @@ const texto = "Ingeniería en Ciberseguridad";
 let i = 0;
 
 function escribir() {
-    const h1 = document.querySelector(".hero-text h2");
+    const h2 = document.querySelector(".hero-text h2");
 
-    if (!h1) return;
+    if (!h2) return;
 
     if (i < texto.length) {
-        h1.textContent += texto.charAt(i);
+        h2.textContent += texto.charAt(i);
         i++;
         setTimeout(escribir, 60);
     }
 }
 
-// limpiar texto
-const h1 = document.querySelector(".hero-text h2");
-if (h1) {
-    h1.textContent = "";
+// limpiar texto antes de escribir
+const h2 = document.querySelector(".hero-text h2");
+if (h2) {
+    h2.textContent = "";
     escribir();
 }
 
@@ -92,29 +92,27 @@ const canvas = document.getElementById("matrix");
 if (canvas) {
     const ctx = canvas.getContext("2d");
 
-    function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    init(); // 👈 clave para que no se rompa
-}
-
-    resize();
-    window.addEventListener("resize", resize);
-
     const letters = "01";
     const fontSize = 14;
-    let columns = canvas.width / fontSize;
+    let columns;
     let drops = [];
 
     function init() {
-        columns = canvas.width / fontSize;
+        columns = Math.floor(canvas.width / fontSize);
         drops = [];
         for (let x = 0; x < columns; x++) {
             drops[x] = 1;
         }
     }
 
-    init();
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init(); // 🔥 importante
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
 
     function draw() {
         ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -162,49 +160,59 @@ if (input && output) {
 
         if (e.key === "Enter") {
 
-            const command = input.value.toLowerCase();
+            const command = input.value.toLowerCase().trim();
             let response = "";
-if (command === "help") {
-    response = "help | about | skills | whoami | ip | hack | clear | date | github | sudo";
-}
-else if (command === "about") {
-    response = "Especialista en ciberseguridad 🔐";
-}
-else if (command === "skills") {
-    response = "Nmap | Metasploit | Burp Suite | Wireshark";
-}
-else if (command === "whoami") {
-    response = "cybercueto@root";
-}
-else if (command === "ip") {
-    const fakeIP = `192.168.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`;
-    response = `Tu IP: ${fakeIP}`;
-}
-else if (command === "date") {
-    response = new Date().toLocaleString();
-}
-else if (command === "github") {
-    response = "github.com/cuetooyanethh-web";
-}
-else if (command === "sudo") {
-    response = "🚫 Acceso denegado";
-}
-else if (command === "hack") {
-    simularHackeo();
-    input.value = "";
-    return;
-}
-else if (command === "clear") {
-    output.innerHTML = "";
-    input.value = "";
-    return;
-}
-else {
-    response = "❌ Comando no reconocido";
-}
-            output.innerHTML += `<p>> ${command}</p>`;
+
+            // Mostrar comando
+            output.innerHTML += `<p style="color:#ff2e2e">> ${command}</p>`;
+
+            if (command === "help") {
+                response = "help | about | skills | whoami | ip | hack | clear | date | github | sudo";
+            }
+            else if (command === "about") {
+                response = "Especialista en ciberseguridad 🔐";
+            }
+            else if (command === "skills") {
+                response = "Nmap | Metasploit | Burp Suite | Wireshark";
+            }
+            else if (command === "whoami") {
+                response = "cybercueto@root";
+            }
+            else if (command === "ip") {
+                const fakeIP = `192.168.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`;
+                response = `Tu IP: ${fakeIP}`;
+            }
+            else if (command === "date") {
+                response = new Date().toLocaleString();
+            }
+            else if (command === "github") {
+                response = "github.com/cuetooyanethh-web";
+            }
+            else if (command === "sudo") {
+                response = "🚫 Acceso denegado";
+            }
+            else if (command === "hack") {
+                simularHackeo();
+                input.value = "";
+                return;
+            }
+            else if (command === "clear") {
+                output.innerHTML = "";
+                input.value = "";
+                return;
+            }
+            else {
+                response = "❌ Comando no reconocido";
+            }
+
+            // Mostrar respuesta
             output.innerHTML += `<p>${response}</p>`;
-            output.scrollTop = output.scrollHeight;
+
+            // Scroll suave
+            output.scrollTo({
+                top: output.scrollHeight,
+                behavior: "smooth"
+            });
 
             input.value = "";
         }
@@ -228,7 +236,10 @@ function simularHackeo() {
     function ejecutar() {
         if (i < pasos.length) {
             output.innerHTML += `<p>${pasos[i]}</p>`;
-            output.scrollTop = output.scrollHeight;
+            output.scrollTo({
+                top: output.scrollHeight,
+                behavior: "smooth"
+            });
             i++;
             setTimeout(ejecutar, 600);
         }
@@ -236,4 +247,3 @@ function simularHackeo() {
 
     ejecutar();
 }
-output.innerHTML += `<p style="color:#ff2e2e">> ${command}</p>`;
