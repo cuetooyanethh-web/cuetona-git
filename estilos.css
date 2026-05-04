@@ -145,3 +145,23 @@ h2 {
     text-align: right;   /* 👈 lo manda a la derecha */
     margin-right: 5px;  /* 👈 lo separa un poco del borde */
 }
+/* 🔴 AGRADECIMIENTO ABAJO DERECHA */
+.pagina.agradecimiento {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.pagina.agradecimiento .texto {
+    width: 60%;
+    margin-left: auto;
+    text-align: justify;
+    margin-bottom: 60px;
+}
+
+/* 🔴 TÍTULO alineado con el texto */
+.pagina.agradecimiento .titulo-pagina {
+    width: 60%;
+    margin-left: auto;
+    text-align: left;
+}
