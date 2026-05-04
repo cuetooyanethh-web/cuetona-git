@@ -210,3 +210,8 @@ h2 {
 .sub2 {
     margin-left: 40px;
 }
+/* ESPACIO ENTRE CAPÍTULOS */
+.espacio {
+    margin-top: 15px;
+}
+
