@@ -1,0 +1,69 @@
+/* 🔴 RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔴 BODY GENERAL */
+body {
+    font-family: "Times New Roman", serif;
+    background: #fff;
+    color: #000;
+}
+
+/* 🔴 PORTADA */
+.portada {
+    width: 80%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.anio {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    margin: 15px auto;
+    display: block;
+}
+
+.titulo {
+    font-size: 20px;
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+.portada p {
+    margin: 5px 0;
+}
+
+/* 🔴 PAGINAS (DEDICATORIA / AGRADECIMIENTO) */
+.pagina {
+    width: 80%;
+    margin: 100px auto;
+    page-break-after: always; /* 👈 separa hojas */
+    text-align: justify;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.texto {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* 🔴 OPCIONAL: NUMERO DE PAGINA */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+}
