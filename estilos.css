@@ -85,10 +85,7 @@ h2 {
 .pagina {
     text-align: justify;
     page-break-after: always;
-      display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* 👈 BAJA TODO */
-    height: 297mm; /* tamaño A4 */
+    
 }
 
 .titulo-pagina {
