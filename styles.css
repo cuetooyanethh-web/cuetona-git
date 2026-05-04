@@ -344,32 +344,6 @@ footer {
     z-index: 999;
 }
 
-.terminal {
-    background: #000;
-    padding: 1rem;
-    margin-top: 3rem;
-    border-radius: 10px;
-    font-family: monospace;
-    box-shadow: 0 0 20px rgba(255,0,0,0.4);
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.6s;
-}
-
-#terminal-output {
-    min-height: 150px;
-    margin-bottom: 10px;
-    color: #0f0;
-}
-
-#terminal-input {
-    width: 100%;
-    background: black;
-    border: none;
-    color: #0f0;
-    outline: none;
-}
 
 
 
@@ -397,16 +371,7 @@ footer {
 /*scan*/
 
 
-.terminal input::placeholder {
-    color: #0f0;
-    opacity: 0.5;
-}
 
-
-.terminal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
 body::after {
     content: "";
     position: fixed;
