@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* 🔴 BODY GENERAL */
+/* 🔴 BODY */
 body {
     background: #ccc;
     display: flex;
@@ -20,7 +20,7 @@ body {
     background: #fff;
     width: 210mm;
     min-height: 297mm;
-    padding: 40px 60px;
+    padding: 60px 80px;
     margin-bottom: 30px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
@@ -30,31 +30,49 @@ body {
     text-align: center;
 }
 
+/* AÑO */
 .anio {
     font-style: italic;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 250px;
-    margin: 20px auto;
-    display: block;
-}
-
-h2 {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.titulo {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 40px 0;
+/* LOGO */
+.logo {
+    width: 300px;
+    margin: 20px auto 30px;
 }
 
-.portada p {
-    margin: 6px 0;
+/* INSTITUCIÓN */
+h2 {
     font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+/* TITULO */
+.titulo {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 60px 0;
+}
+
+/* TEXTO */
+.portada p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* BLOQUES */
+.bloque {
+    margin-top: 30px;
+}
+
+/* NEGRITA */
+.negrita {
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /* 🔴 PAGINAS INTERNAS */
@@ -76,14 +94,14 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* 🔴 PIE DE PAGINA */
+/* 🔴 FOOTER */
 .footer {
     text-align: center;
     margin-top: 50px;
     font-size: 14px;
 }
 
-/* 🔴 IMPRESIÓN REAL */
+/* 🔴 IMPRESIÓN */
 @page {
     size: A4;
     margin: 20mm;
@@ -100,6 +118,5 @@ h2 {
         margin: 0;
         width: 100%;
         min-height: 100%;
-        page-break-after: always;
     }
 }
