@@ -292,4 +292,5 @@ h2 {
     width: 120px; /* tamaño pequeño exacto */
     height: auto;
     border: 1px solid #ccc;
+     border: 1px solid #000; /* opcional: borde tipo cuadro */
 }
