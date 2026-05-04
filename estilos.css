@@ -1,0 +1,86 @@
+/* 🔴 RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 🔴 BODY */
+body {
+    font-family: 'Courier New', monospace;
+    background: #000;
+    color: #fff;
+}
+
+/* 🔴 CONTENEDOR */
+.container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+/* 🔴 TÍTULO */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px red;
+}
+
+/* 🔴 DESCRIPCIÓN */
+.descripcion {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* 🔴 IMAGEN */
+.proyecto-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* 🔴 BOTONES */
+.botones a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    border: 1px solid red;
+    transition: 0.3s;
+}
+
+/* 🔥 HOVER */
+.botones a:hover {
+    background: red;
+    box-shadow: 0 0 15px red;
+}
+
+/* 🔴 VOLVER */
+.volver {
+    display: block;
+    margin-top: 40px;
+    color: #aaa;
+    text-decoration: none;
+}
+
+.volver:hover {
+    color: red;
+}
+
+/* 🔥 ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
