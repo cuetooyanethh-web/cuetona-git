@@ -7,33 +7,46 @@
 
 /* 🔴 BODY GENERAL */
 body {
+    background: #ccc; /* fondo gris alrededor */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 0;
     font-family: "Times New Roman", serif;
-    background: #fff;
-    color: #000;
 }
 
-/* 🔴 PORTADA */
+
+/* HOJA TIPO A4 */
 .portada {
-    width: 80%;
-    margin: 100px auto;
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
     text-align: center;
 }
 
+/* TEXTO */
 .anio {
-    font-size: 14px;
+    font-style: italic;
     margin-bottom: 20px;
 }
 
 .logo {
-    width: 120px;
-    margin: 15px auto;
+    width: 250px;
+    margin: 20px auto;
     display: block;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .titulo {
     font-size: 20px;
-    margin: 30px 0;
     font-weight: bold;
+    margin: 40px 0;
 }
 
 .portada p {
