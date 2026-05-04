@@ -225,4 +225,16 @@ h2 {
 .espacio {
     margin-top: 15px;
 }
+.capitulo-solo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    page-break-after: always; /* 👈 nueva hoja después */
+}
+
+.capitulo-solo h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
 
