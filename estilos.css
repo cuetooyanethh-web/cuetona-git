@@ -166,3 +166,25 @@ h2 {
     margin-left: auto;
     text-align: left;
 }
+/* 🔴 INDICE */
+.indice {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 30px;
+}
+
+/* subtítulos */
+.sub {
+    margin-left: 20px;
+}
+
+.sub2 {
+    margin-left: 40px;
+}
+
+/* título índice más elegante */
+.indice-titulo {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
