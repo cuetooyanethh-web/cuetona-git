@@ -267,7 +267,6 @@ h2 {
     font-size: 15px;
     font-weight: bold;
     margin-top: 15px;
-
 }
 
 .texto {
@@ -275,6 +274,8 @@ h2 {
     margin-bottom: 12px;
     line-height: 1.5;
 }
+
+/* FIGURA */
 .figura-titulo {
     font-weight: bold;
     margin-top: 15px;
@@ -284,13 +285,13 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* IMAGEN */
 .contenedor-imagen {
-    margin-left: 40px; /* 👈 lo mueve a la izquierda como tu imagen */
+    margin-left: 40px; /* posición como tu imagen */
 }
 
 .contenedor-imagen img {
-    width: 120px; /* tamaño pequeño exacto */
+    width: 120px;
     height: auto;
-    border: 1px solid #ccc;
-     border: 1px solid #000; /* opcional: borde tipo cuadro */
+    border: 1px solid #000; /* solo una vez (quité duplicado) */
 }
