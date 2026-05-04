@@ -99,6 +99,13 @@ h2 {
 .pagina {
     text-align: justify;
     page-break-after: always;
+     width: 21cm;
+    min-height: 29.7cm;
+    padding: 3cm 2.5cm 2.5cm 3cm; /* 👈 márgenes tipo tesis */
+    margin: auto;
+    background: white;
+    box-sizing: border-box;
+    page-break-after: always;
     
 }
 
