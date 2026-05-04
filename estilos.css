@@ -15,6 +15,19 @@ body {
     font-family: "Times New Roman", serif;
      counter-reset: pagina;
 }
+.pagina {
+    position: relative;
+    page-break-after: always;
+    counter-increment: pagina;
+}
+
+.pagina::after {
+    content: counter(pagina);
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 14px;
+}
 
 /* 🔴 HOJA A4 */
 .portada, .pagina {
