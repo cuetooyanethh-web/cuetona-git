@@ -143,5 +143,5 @@ h2 {
 }
 .pagina.dedicatoria .titulo-pagina {
     text-align: right;   /* 👈 lo manda a la derecha */
-    margin-right: 10px;  /* 👈 lo separa un poco del borde */
+    margin-right: 5px;  /* 👈 lo separa un poco del borde */
 }
