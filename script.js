@@ -93,9 +93,10 @@ if (canvas) {
     const ctx = canvas.getContext("2d");
 
     function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init(); // 👈 clave para que no se rompa
+}
 
     resize();
     window.addEventListener("resize", resize);
@@ -163,37 +164,44 @@ if (input && output) {
 
             const command = input.value.toLowerCase();
             let response = "";
-
-            if (command === "help") {
-                response = "help | about | skills | whoami | ip | hack | clear";
-            }
-            else if (command === "about") {
-                response = "Especialista en ciberseguridad 🔐";
-            }
-            else if (command === "skills") {
-                response = "Nmap | Metasploit | Burp Suite | Wireshark";
-            }
-            else if (command === "whoami") {
-                response = "cybercueto@root";
-            }
-            else if (command === "ip") {
-                const fakeIP = `192.168.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`;
-                response = `Tu IP: ${fakeIP}`;
-            }
-            else if (command === "hack") {
-                simularHackeo();
-                input.value = "";
-                return;
-            }
-            else if (command === "clear") {
-                output.innerHTML = "";
-                input.value = "";
-                return;
-            }
-            else {
-                response = "❌ Comando no reconocido";
-            }
-
+if (command === "help") {
+    response = "help | about | skills | whoami | ip | hack | clear | date | github | sudo";
+}
+else if (command === "about") {
+    response = "Especialista en ciberseguridad 🔐";
+}
+else if (command === "skills") {
+    response = "Nmap | Metasploit | Burp Suite | Wireshark";
+}
+else if (command === "whoami") {
+    response = "cybercueto@root";
+}
+else if (command === "ip") {
+    const fakeIP = `192.168.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`;
+    response = `Tu IP: ${fakeIP}`;
+}
+else if (command === "date") {
+    response = new Date().toLocaleString();
+}
+else if (command === "github") {
+    response = "github.com/cuetooyanethh-web";
+}
+else if (command === "sudo") {
+    response = "🚫 Acceso denegado";
+}
+else if (command === "hack") {
+    simularHackeo();
+    input.value = "";
+    return;
+}
+else if (command === "clear") {
+    output.innerHTML = "";
+    input.value = "";
+    return;
+}
+else {
+    response = "❌ Comando no reconocido";
+}
             output.innerHTML += `<p>> ${command}</p>`;
             output.innerHTML += `<p>${response}</p>`;
             output.scrollTop = output.scrollHeight;
@@ -228,3 +236,4 @@ function simularHackeo() {
 
     ejecutar();
 }
+output.innerHTML += `<p style="color:#ff2e2e">> ${command}</p>`;
