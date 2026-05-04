@@ -99,6 +99,7 @@ h2 {
 .pagina {
     text-align: justify;
     page-break-after: always;
+     justify-content: center;
     
     
 }
