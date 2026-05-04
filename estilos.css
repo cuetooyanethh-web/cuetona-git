@@ -93,6 +93,10 @@ h2 {
     font-size: 22px;
     margin-bottom: 40px;
     font-weight: bold;
+     display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 👈 BAJA TODO */
+    height: 297mm; /* tamaño A4 */
 }
 
 .texto {
