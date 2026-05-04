@@ -37,10 +37,10 @@ body {
 /* AÑO */
 .anio {
     font-style: italic;
-    font-size: 60px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: bold;
     margin-bottom: 40px;
-     letter-spacing: 1px; 
+    letter-spacing: 1px;
 }
 
 /* LOGO */
@@ -93,10 +93,7 @@ h2 {
     font-size: 22px;
     margin-bottom: 40px;
     font-weight: bold;
-     display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* 👈 BAJA TODO */
-    height: 297mm; /* tamaño A4 */
+    
 }
 
 .texto {
@@ -130,4 +127,17 @@ h2 {
         width: 100%;
         min-height: 100%;
     }
+}
+/* 🔴 DEDICATORIA ABAJO Y DERECHA */
+.pagina.dedicatoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 👈 BAJA TODO */
+}
+
+.pagina.dedicatoria .texto {
+    width: 60%;
+    margin-left: auto; /* 👈 DERECHA */
+    text-align: justify;
+    margin-bottom: 60px; /* 👈 separación del borde */
 }
