@@ -326,3 +326,11 @@ a {
 a:hover {
     text-decoration: underline;
 }
+.lista-valores {
+    margin-left: 40px;
+    line-height: 2; /* doble espacio como pediste */
+}
+
+.lista-valores li {
+    margin-bottom: 8px;
+}
