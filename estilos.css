@@ -221,6 +221,7 @@ h2 {
     text-align: center;
     font-weight: bold;
     font-size: 24px;
+    
 }
 /* FILA PERFECTA */
 .fila {
@@ -228,6 +229,14 @@ h2 {
     justify-content: space-between;
     border-bottom: 1px dotted #000;
     margin: 5px 0;
+ 
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+    page-break-after: always;
+    counter-increment: pagina;
+    
 }
 
 /* QUITA BORDE EN NUMERO */
