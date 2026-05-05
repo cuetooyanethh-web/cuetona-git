@@ -138,10 +138,11 @@ h2 {
     }
 
     .portada, .pagina {
-        box-shadow: none;
-        margin: 0;
-        width: 100%;
-        min-height: 100%;
+        background: #fff;
+    width: 210mm;
+    height: 297mm; /* ✅ tamaño fijo A4 */
+    padding: 60px 80px;
+    overflow: hidden; /* 🔥 evita que se desborde */
     }
 }
 /* 🔴 DEDICATORIA ABAJO Y DERECHA */
