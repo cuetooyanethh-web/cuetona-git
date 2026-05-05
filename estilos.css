@@ -131,19 +131,25 @@ h2 {
     margin: 20mm;
 }
 
-@media print {
-    body {
-        background: none;
-        padding: 0;
-    }
+/* 📱 RESPONSIVE (pantallas pequeñas) */
+@media (max-width: 768px) {
 
     .portada, .pagina {
-        background: #fff;
-    width: 210mm;
-    height: 297mm; /* ✅ tamaño fijo A4 */
-    padding: 60px 80px;
-    overflow: hidden; /* 🔥 evita que se desborde */
+        width: 95%;          /* se adapta al celular */
+        height: auto;        /* 🔥 evita que se estire raro */
+        min-height: unset;   /* elimina altura forzada */
+        padding: 30px 20px;  /* menos espacio para móvil */
     }
+
+    body {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 200px; /* más pequeño en celular */
+    }
+
+}
 }
 /* 🔴 DEDICATORIA ABAJO Y DERECHA */
 .pagina.dedicatoria {
