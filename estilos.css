@@ -19,6 +19,7 @@ body {
     position: relative;
     page-break-after: always;
     counter-increment: pagina;
+    overflow: hidden; /* 🔥 evita que se estire */
 }
 
 .pagina::after {
@@ -135,10 +136,9 @@ h2 {
 @media (max-width: 768px) {
 
     .portada, .pagina {
-        width: 95%;          /* se adapta al celular */
-        height: auto;        /* 🔥 evita que se estire raro */
-        min-height: unset;   /* elimina altura forzada */
-        padding: 30px 20px;  /* menos espacio para móvil */
+           width: 210mm;
+    height: 297mm; /* ✅ TODAS iguales */
+    overflow: hidden; /* 🔥 evita que crezca */
     }
 
     body {
@@ -252,8 +252,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    page-break-after: always; /* 👈 nueva hoja después */
+      height: 297mm; /* ✅ mismo tamaño que hoja */
 }
 
 .capitulo-solo h1 {
