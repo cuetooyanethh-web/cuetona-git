@@ -16,11 +16,12 @@ body {
      counter-reset: pagina;
 }
 .pagina {
-    position: relative;
+      position: relative;
+    text-align: justify;
     page-break-after: always;
     counter-increment: pagina;
-    overflow: hidden; /* 🔥 evita que se estire */
 }
+
 
 .pagina::after {
     content: counter(pagina);
@@ -260,7 +261,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-      height: 297mm; /* ✅ mismo tamaño que hoja */
+    min-height: 297mm; /* mejor que height */
 }
 
 .capitulo-solo h1 {
