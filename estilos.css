@@ -332,6 +332,9 @@ a:hover {
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 20px;
+    
+    page-break-inside: avoid;
+
 }
 
 .tabla th, .tabla td {
