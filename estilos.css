@@ -92,19 +92,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-.pagina {
-    position: relative;
-    text-align: justify;
-    page-break-after: always;
-    counter-increment: pagina;
 
-    background: #fff;
-    width: 210mm;
-    min-height: 297mm;
-    padding: 60px 80px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
 
 .titulo-pagina {
     text-align: center;
@@ -132,15 +120,25 @@ h2 {
     size: A4;
     margin: 20mm;
 }
+.pagina {
+    position: relative;
+    text-align: justify;
+    page-break-after: always;
+    counter-increment: pagina;
+}
 
 /* 📱 RESPONSIVE (pantallas pequeñas) */
 @media (max-width: 768px) {
 
-    .portada, .pagina {
-        width: 95%;     /* ✅ adaptable */
-        height: auto;   /* ✅ NO A4 en celular */
-        padding: 30px 20px;
-    }
+   .portada, .pagina {
+    background: #fff;
+    width: 210mm;
+    height: 297mm; /* ✅ tamaño fijo */
+    padding: 60px 80px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
 
     body {
         padding: 10px;
