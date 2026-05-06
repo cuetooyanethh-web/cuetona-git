@@ -30,7 +30,7 @@ body {
 .portada, .pagina {
     background: #fff;
     width: 210mm;
-    min-height: 297mm;
+        height: 297mm; /* ✅ FIX REAL */
     padding: 60px 80px;
     margin-bottom: 30px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -131,12 +131,11 @@ h2 {
 @media (max-width: 768px) {
 
    .portada, .pagina {
-    background: #fff;
-    width: 210mm;
-    height: 297mm; /* ✅ tamaño fijo */
-    padding: 60px 80px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+ width: 95%;
+        aspect-ratio: 210 / 297; /* 🔥 clave */
+        height: auto;
+        padding: 20px;
+        overflow: hidden;
 }
 
 
