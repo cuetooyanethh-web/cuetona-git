@@ -1,13 +1,4 @@
-:root {
-    --primary-color: #ff2e2e;      /* rojo fuerte */
-    --dark-bg: #0b0b0b;            /* negro profundo */
-    --darker-bg: #050505;
-    --light-text: #f5f5f5;
-    --gray-text: #9a9a9a;
-    --card-bg: #121212;
-    --border-color: #1f1f1f;
-    --transition: all .3s ease;
-}
+      
 
 /* RESET */
 * {
