@@ -57,31 +57,4 @@ botonModo.addEventListener("click", () => {
     }
 
 });
-// 🔝 BOTÓN VOLVER ARRIBA
-
-const botonArriba = document.createElement("button");
-
-botonArriba.innerText = "⬆";
-
-botonArriba.style.position = "fixed";
-botonArriba.style.bottom = "20px";
-botonArriba.style.left = "20px";
-botonArriba.style.padding = "10px 15px";
-botonArriba.style.border = "none";
-botonArriba.style.borderRadius = "50%";
-botonArriba.style.background = "#b30000";
-botonArriba.style.color = "#fff";
-botonArriba.style.cursor = "pointer";
-botonArriba.style.fontSize = "18px";
-botonArriba.style.zIndex = "999";
-
-document.body.appendChild(botonArriba);
-
-botonArriba.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
+alert("Bienvenido al Proyecto de Ciberseguridad");
