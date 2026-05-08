@@ -13,11 +13,28 @@
 <header>
     <nav id="navbar">
         <div class="logo">Cyber<span>Cueto</span></div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Perfil</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-        </ul>
+       <button id="menuToggle" onclick="menu.hidden = !menu.hidden">
+    ☰
+</button>
+<aside id="menu" hidden>
+
+    <nav class="menu-links">
+
+        <a href="#inicio">
+            <i class="fa-solid fa-user"></i> Perfil
+        </a>
+
+        <a href="#experiencia">
+            <i class="fa-solid fa-briefcase"></i> Experiencia
+        </a>
+
+        <a href="#proyectos">
+            <i class="fa-solid fa-code"></i> Proyectos
+        </a>
+
+    </nav>
+
+</aside>
     </nav>
 </header>
 
