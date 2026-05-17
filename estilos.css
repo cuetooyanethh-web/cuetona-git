@@ -11,12 +11,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0;
+    padding: 40px 10px; /* Un poco de margen a los lados en celular */
     font-family: "Times New Roman", serif;
-     counter-reset: pagina;
+    counter-reset: pagina;
 }
 
+/* 🔴 CONTENEDOR DE LA PÁGINA (Para posicionar el número) */
+.portada, .pagina {
+    background: #fff;
+    width: 215.9mm;       /* Ancho exacto Carta de Word */
+    height: 279.4mm;      /* Alto exacto Carta de Word */
+    padding: 25.4mm;      /* Margen estándar de Word (1 pulgada) */
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;   /* Obligatorio para que el número absoluto no se mueva */
+    
+    /* Efecto Word en PC: Mantiene el tamaño real */
+    flex-shrink: 0; 
+}
 
+/* 🔴 NÚMERO DE PÁGINA (Solo para .pagina) */
+.pagina {
+    counter-increment: pagina; /* Incrementa el contador */
+}
 
 .pagina::after {
     content: counter(pagina);
@@ -24,173 +41,201 @@ body {
     bottom: 20px;
     right: 40px;
     font-size: 14px;
+    color: #000;
 }
 
-/* 🔴 HOJA A4 */
-.portada, .pagina {
-    background: #fff;
-    width: 210mm;
-        height: 297mm; /* ✅ FIX REAL */
-    padding: 60px 80px;
-    margin-bottom: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
+/* 📱 ADAPTACIÓN PARA CELULAR */
+@media (max-width: 220mm) {
+    body {
+        padding: 10px 5px;
+    }
+    
+    .portada, .pagina {
+        /* Convierte la hoja a tamaño flexible en pantallas chicas */
+        width: 100%;       
+        max-width: 100%;
+        height: auto;      /* Permite que crezca según el texto en el móvil */
+        min-height: 279.4mm; /* Mantiene la proporción visual mínima */
+        padding: 20px;     /* Reduce los márgenes para aprovechar la pantalla táctil */
+        box-shadow: none;  /* Quita la sombra pesada en móviles */
+    }
 
-/* 🔴 PORTADA */
+    /* Ajusta la posición del número en pantallas chicas */
+    .pagina::after {
+        bottom: 10px;
+        right: 20px;
+    }
+}
+/* 🏢 DISEÑO ESPECÍFICO PARA LA PORTADA */
 .portada {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 👈 centra vertical */
     align-items: center;
     text-align: center;
+    justify-content: space-between; /* Distribuye el contenido de arriba a abajo */
+    padding: 30mm 25mm 20mm 25mm !important; /* Margen superior amplio, lados estándar */
 }
 
-/* AÑO */
-.anio {
-    font-style: italic;
-    font-size: 18px;
+/* Año oficial (Texto superior con comillas) */
+.portada .anio {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+/* Logo de SENATI */
+.portada .logo {
+    width: 350px; /* Tamaño ideal para el logo de SENATI */
+    height: auto;
+    margin: 15px 0;
+    object-fit: contain;
+}
+
+/* Nombre de la institución (SENATI) */
+.portada h2 {
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 40px;
-    letter-spacing: 1px;
+    line-height: 1.3;
+    max-width: 95%;
 }
 
-/* LOGO */
-.logo {
-    width: 500px;
-    margin: 50px auto 30px;
-}
-
-/* INSTITUCIÓN */
-h2 {
+/* Título del Proyecto (Destacado y centrado) */
+.portada .titulo {
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 50px;
-}
-
-/* TITULO */
-.titulo {
-    font-size: 35px;
-    font-weight: bold;
+    text-transform: uppercase;
+    margin: 30px 0;
     line-height: 1.5;
-    margin: 60px 0;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
-/* TEXTO */
+/* Datos de la Escuela, Especialidad y Autor */
 .portada p {
     font-size: 16px;
     margin: 10px 0;
+   /* margin-bottom: 8px;*/
+   line-height: 1.4;
 }
 
-/* BLOQUES */
-.bloque {
-    margin-top: 30px;
-}
-
-/* NEGRITA */
-.negrita {
+.portada strong {
     font-weight: bold;
-    letter-spacing: 1px;
+}
+
+/* Bloque final (Lugar y Fecha) */
+.portada p:last-of-type {
+    margin-bottom: 0;
 }
 
 
+/* 📱 AJUSTES EXTRA PARA CELULAR (RESISTENCIA) */
+@media (max-width: 220mm) {
+    .portada {
+        justify-content: flex-start; /* En celular fluye hacia abajo normalmente */
+        gap: 20px;                   /* Separa los bloques para que no se peguen */
+        padding: 30px 15px !important;
+    }
 
+    .portada .anio { font-size: 12px; }
+    .portada .logo { width: 130px; }
+    .portada h2 { font-size: 14px; margin-bottom: 10px; }
+    .portada .titulo { font-size: 16px; margin: 15px 0; }
+    .portada p { font-size: 13px; }
+}
+
+
+/* 🏛️ ESTILOS GENERALES PARA PRELIMINARES */
+.dedicatoria,
+.agradecimiento {
+    position: relative;
+    height: 100vh;
+    padding-top: 350px; /* baja todo el contenido */
+}
+
+/* ✅ TÍTULOS */
 .titulo-pagina {
-    text-align: center;
-    font-size: 22px;
+    text-align: right;
+    margin-right: 80px;
     margin-bottom: 40px;
+
+    font-size: 20px;
     font-weight: bold;
-    
+    text-transform: uppercase;
 }
 
-.texto {
-    font-size: 16px;
+/* ✅ TEXTO */
+.dedicatoria .texto,
+.agradecimiento .texto {
+    width: 70%;
+    margin-left: auto;
+    margin-right: 80px;
+
+    text-align: justify;
+    font-size: 15px;
     line-height: 1.8;
-    margin-bottom: 20px;
+    font-style: italic;
 }
 
-/* 🔴 FOOTER */
-.footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 14px;
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+
+    .dedicatoria,
+    .agradecimiento {
+        padding-top: 180px;
+    }
+
+    .titulo-pagina {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+    .dedicatoria .texto,
+    .agradecimiento .texto {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 14px;
+        line-height: 1.7;
+    }
 }
+
 
 /* 🔴 IMPRESIÓN */
-@page {
+/*@page {
     size: A4;
     margin: 20mm;
-}
-.pagina {
+}*/
+/*.pagina {
     position: relative;
     text-align: justify;
     page-break-after: always;
     counter-increment: pagina;
-}
+}*/
 
 /* 📱 RESPONSIVE (pantallas pequeñas) */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
 
-   .portada, .pagina {
+ ////  .portada, .pagina {
  width: 95%;
         aspect-ratio: 210 / 297; /* 🔥 clave */
-        height: auto;
+      /*  height: auto;
         padding: 20px;
-        overflow: hidden;
-}
+        overflow: hidden;*/
+/*}/*/
 
-
-    body {
-        padding: 10px;
-    }
-
-    .logo {
-        width: 200px;
-    }
-}
-
-/* 🔴 DEDICATORIA ABAJO Y DERECHA */
-.pagina.dedicatoria {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* 👈 BAJA TODO */
-}
-
-.pagina.dedicatoria .texto {
-    width: 60%;
-    margin-left: auto; /* 👈 DERECHA */
-    text-align: justify;
-    margin-bottom: 60px; /* 👈 separación del borde */
-}
-.pagina.dedicatoria .titulo-pagina {
-      width: 60%;
-    margin-left: auto;
-    text-align: left;
-}
-/* 🔴 AGRADECIMIENTO ABAJO DERECHA */
-.pagina.agradecimiento {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.pagina.agradecimiento .texto {
-    width: 60%;
-    margin-left: auto;
-    text-align: justify;
-    margin-bottom: 60px;
-}
-
-/* 🔴 TÍTULO alineado con el texto */
-.pagina.agradecimiento .titulo-pagina {
-    width: 60%;
-    margin-left: auto;
-    text-align: left;
-}
 /* 🔴 INDICE */
 .indice {
     font-size: 15px;
     line-height: 1.8;
     margin-top: 30px;
+    height: auto;
+        padding: 20px;
+        overflow: hidden
 }
 
 .indice p {
@@ -361,7 +406,7 @@ a:hover {
 }
 
 .contenedor-imagen-grande img {
-    width: 500px; /* más grande */
+    width: 350px; /* más grande */
     max-width: 100%;
     height: auto;
     border: 1px solid #000;
